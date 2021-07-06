@@ -1,6 +1,9 @@
 "use strict";
 const multipleFilesModal = require("../modals/multipleFiles");
 const SingleFileModal = require("../modals/singleFile");
+
+// POST REQUEST HANDLERS
+//Single File
 const singleFileUpload = async (req, res, next) => {
   try {
     const file = new SingleFileModal({
@@ -17,7 +20,7 @@ const singleFileUpload = async (req, res, next) => {
     res.status(400).send(error.message);
   }
 };
-
+// Multiple Files
 const MultipleFileUpload = async (req, res, next) => {
   try {
     let filesArray = [];
@@ -42,6 +45,7 @@ const MultipleFileUpload = async (req, res, next) => {
   }
 };
 
+// size formatter
 const fileSizeFormatter = (bytes, decimal) => {
   if (bytes == 0) {
     return "0 Bytes";
@@ -53,7 +57,28 @@ const fileSizeFormatter = (bytes, decimal) => {
     parseFloat((bytes / Math.pow(100, index)).toFixed(dm)) + " " + sizes[index]
   );
 };
+
+//GET REQUEST HANDLER
+const getAllSingelFiles = async (req, res, next) => {
+  try {
+    const files = await SingleFileModal.find(); // get all files
+    res.status(200).send(files);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+const getAllMultipleFiles = async (req, res, next) => {
+  try {
+    const files = await multipleFilesModal.find(); // get all files
+    res.status(200).send(files);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+
 module.exports = {
   singleFileUpload,
   MultipleFileUpload,
+  getAllSingelFiles,
+  getAllMultipleFiles,
 };
