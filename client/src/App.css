@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+input {
+  overflow: hidden;
+}
+h4 {
+  text-align: left;
+}
+.notification {
+  position: absolute;
+  height: 80px;
+  width: 300px;
+  right: 30px;
+  background: rgb(252 252 252);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 3px 2px #d6d6d6;
+  animation-name: notification;
+  animation-duration: 1s;
+}
+@keyframes notification {
+  0% {
+    transform: translateX(900px);
+  }
+  100% {
+    transform: translateX();
+  }
+}
+.success {
+  color: #1ea41e;
+  font-style: italic;
+  font-weight: 600;
+}
