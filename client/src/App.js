@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Row className="mt-5">
-        <h3>Single and Multiple File Uploader</h3>
+        <h3 className="brand-name">MY IMAGE UPLOADER</h3>
         {notification.success && <Notification notification={notification} />}
         <FileUploadScreen SetMsg={SetSuccessNotification} />
         <Gallery newAdded={newAdded} />

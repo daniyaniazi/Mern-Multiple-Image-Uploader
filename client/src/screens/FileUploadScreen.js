@@ -42,7 +42,7 @@ const FileUploadScreen = ({ SetMsg }) => {
     <Container style={{ width: "95%" }} className="mt-5">
       <Row>
         <Col lg={5}>
-          <h4>Single File</h4>
+          <h4>Uplaod an awesoem image</h4>
           <Form className="bg-light py-5" onSubmit={UploadSingleFile}>
             <Form.Group controlId="file" className="mb-3">
               <Row>
@@ -63,7 +63,7 @@ const FileUploadScreen = ({ SetMsg }) => {
         </Col>
 
         <Col lg={7}>
-          <h4>Multiple File</h4>
+          <h4>Create a Gallery</h4>
 
           <Form className="bg-light py-5" onSubmit={UploadMultipleFiles}>
             <Row>

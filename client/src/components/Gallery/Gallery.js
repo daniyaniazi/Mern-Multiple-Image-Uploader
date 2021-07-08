@@ -51,7 +51,7 @@ const Gallery = ({ newAdded }) => {
           <Row>
             {multipleFiles?.map((gallery, index) => (
               <Row key="index">
-                <h4 className="text-info">{gallery.title}</h4>
+                <h4 className="text-dark text-gallery">{gallery.title}</h4>
                 {gallery.files?.map((file, index) => (
                   <Col lg={4} key={index}>
                     <Card border="secondary" className="mb-3">
